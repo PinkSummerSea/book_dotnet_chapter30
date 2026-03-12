@@ -1,0 +1,74 @@
+## Build results
+bin/
+obj/
+out/
+
+## Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider
+.idea/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## ASP.NET Core
+appsettings.Development.json
+
+## Publish
+publish/
+wwwroot/lib/
+
+## Entity Framework migrations (optional)
+# Migrations/
+
+## Resharper
+_ReSharper*
+*.DotSettings.user
+
+## Test results
+TestResults/
+
+## Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+## Node (for MVC with frontend)
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Environment files
+.env
+
+## Mac
+*.swp
+
+## Windows
+ehthumbs.db
+
+## dotnet tools
+.dotnet/

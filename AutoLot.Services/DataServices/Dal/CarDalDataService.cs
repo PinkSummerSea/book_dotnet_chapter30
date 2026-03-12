@@ -1,0 +1,15 @@
+using System;
+
+namespace AutoLot.Services.DataServices.Dal;
+
+public class CarDalDataService : DalServiceBase<Car>, ICarDataService
+{
+    private readonly ICarRepo _repo;
+    public CarDalDataService(ICarRepo repo) : base(repo)
+    {
+        _repo=repo;
+    }
+
+    public async Task<IEnumerable<Car>> GetAllByMakeAsync(int? makeId)
+    =>makeId.HasValue?_repo.GetAllBy(makeId.Value):_repo.GetAllIgnoreQueryFilters();
+}

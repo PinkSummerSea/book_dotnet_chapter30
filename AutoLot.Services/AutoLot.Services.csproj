@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../book_chapter23/AutoLot.Dal/AutoLot.Dal.csproj" />
+    <ProjectReference Include="../../book_chapter23/AutoLot.Models/AutoLot.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="11.0.0-preview.1.26104.118" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="11.0.0-preview.1.26104.118" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.14.15">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="9.0.3" />
+    <PackageReference Include="System.Text.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ApiWrapper/" />
+    <Folder Include="ApiWrapper/Base/" />
+    <Folder Include="ApiWrapper/Configuration/" />
+    <Folder Include="ApiWrapper/Interfaces/" />
+    <Folder Include="ApiWrapper/Models/" />
+    <Folder Include="DataServices/Dal/Base/" />
+    <Folder Include="DataServices/Interfaces/" />
+    <Folder Include="Utilities/" />
+    <Folder Include="ViewModels/" />
+  </ItemGroup>
+</Project>
