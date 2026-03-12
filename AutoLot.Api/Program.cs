@@ -14,10 +14,10 @@ builder.Services.AddRepositories();
 var app = builder.Build();
 
 // configure http request pipeline
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     
-}
+// }
 
 app.UseSwagger();
 app.UseSwaggerUI();

@@ -12,11 +12,7 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
-global using Serilog;
-global using Serilog.Context;
-global using Serilog.Core.Enrichers;
-global using Serilog.Events;
-global using Serilog.Sinks.MSSqlServer;
+
 
 global using System.Data;
 global using System.Runtime.CompilerServices;
