@@ -5,6 +5,7 @@ namespace AutoLot.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class ValuesController : ControllerBase
     {
         [HttpGet]
@@ -31,6 +32,17 @@ namespace AutoLot.Api.Controllers
         public IActionResult Get4()
         {
             return new JsonResult(new string[]{"value1","value2"});
+        }
+
+        [HttpPost]
+        public IActionResult BadBindingExample(WeatherForecast forecast)
+        {
+            return ModelState.IsValid ? Ok(forecast) : ValidationProblem(ModelState);
+        }
+        [HttpGet("error")]
+        public IActionResult Error()
+        {
+            return NotFound();
         }
     }
 }
