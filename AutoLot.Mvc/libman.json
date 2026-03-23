@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "defaultDestination": "wwwroot/lib",
+  "libraries": [
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery",
+      "files": ["dist/jquery.js", "dist/jquery.min.js", "dist/jquery.min.map"]
+    },
+    {
+      "library": "jquery-validation@1.19.3",
+      "destination": "wwwroot/lib/jquery-validation",
+      "files": [
+        "dist/jquery.validate.js",
+        "dist/jquery.validate.min.js",
+        "dist/additional-methods.js",
+        "dist/additional-methods.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.12",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive",
+      "files": [
+        "dist/jquery.validate.unobtrusive.js",
+        "dist/jquery.validate.unobtrusive.min.js"
+      ]
+    },
+    {
+      "library": "bootstrap@5.1.3",
+      "destination": "wwwroot/lib/bootstrap",
+      "files": [
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap.css.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map",
+        "dist/js/bootstrap.bundle.js",
+        "dist/js/bootstrap.bundle.js.map",
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/js/bootstrap.js",
+        "dist/js/bootstrap.js.map",
+        "dist/js/bootstrap.min.js",
+        "dist/js/bootstrap.min.js.map"
+      ]
+    },
+    {
+      "library": "@fortawesome/fontawesome-free@5.15.4",
+      "destination": "wwwroot/lib/font-awesome",
+      "files": [
+        "js/all.js",
+        "js/all.min.js",
+        "css/all.css",
+        "css/all.min.css",
+        "sprites/brands.svg",
+        "sprites/regular.svg",
+        "sprites/solid.svg",
+        "webfonts/fa-brands-400.eot",
+        "webfonts/fa-brands-400.svg",
+        "webfonts/fa-brands-400.ttf",
+        "webfonts/fa-brands-400.woff",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-regular-400.eot",
+        "webfonts/fa-regular-400.svg",
+        "webfonts/fa-regular-400.ttf",
+        "webfonts/fa-regular-400.woff",
+        "webfonts/fa-regular-400.woff2",
+        "webfonts/fa-solid-900.eot",
+        "webfonts/fa-solid-900.svg",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-solid-900.woff",
+        "webfonts/fa-solid-900.woff2"
+      ]
+    }
+  ]
+}

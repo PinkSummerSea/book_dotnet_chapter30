@@ -11,13 +11,37 @@ builder.Services.AddRepositories();
 builder.Services.AddDataServices(builder.Configuration);
 builder.Services.Configure<DealerInfo>(builder.Configuration.GetSection(nameof(DealerInfo)));
 builder.Services.ConfigureApiServiceWrapper(builder.Configuration);
-
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddWebOptimizer(false,false);
+    // builder.Services.AddWebOptimizer(options =>
+    // {
+    //     options.MinifyCssFiles("AutoLot.Mvc.styles.css");
+    //     options.MinifyCssFiles("css/site.css");
+    //     options.MinifyJsFiles("js/site.js");
+    // });
+}
+else
+{
+    builder.Services.AddWebOptimizer(options =>
+    {
+        options.MinifyCssFiles("AutoLot.Mvc.styles.css");
+        options.MinifyCssFiles("css/site.css");
+        options.MinifyJsFiles("js/site.js");
+    });
+}
 var app = builder.Build();
 
 //configure http request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+    if (app.Configuration.GetValue<bool>("RebuildDataBase"))
+    {
+        using var scope = app.Services.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        SampleDataInitializer.InitializeData(dbContext);
+    }
 }
 else
 {
@@ -25,11 +49,13 @@ else
     app.UseHsts();
 }
 app.UseHttpsRedirection();
+app.UseWebOptimizer();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
-app.MapControllerRoute(
-    name:"default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
+app.MapControllers();
+// app.MapControllerRoute(
+//     name:"default",
+//     pattern: "{controller=Home}/{action=Index}/{id?}"
+// );
 app.Run();

@@ -18,7 +18,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="16.1.0" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
 
     <!-- API Versioning：建议从旧的 Microsoft.* 包迁移到 Asp.Versioning.* -->
     <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />

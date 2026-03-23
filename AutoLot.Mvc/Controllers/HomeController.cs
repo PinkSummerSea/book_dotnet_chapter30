@@ -4,6 +4,7 @@ using AutoLot.Mvc.Models;
 
 namespace AutoLot.Mvc.Controllers;
 
+[Route("[controller]/[action]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -12,12 +13,17 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
-    public IActionResult Index()
+    [HttpGet]
+    [Route("/")]
+    [Route("/[controller]")]
+    [Route("/[controller]/[action]")]
+    public IActionResult Index([FromServices] IOptionsMonitor<DealerInfo> dealerMonitor)
     {
-        return View();
+        var vm = dealerMonitor.CurrentValue;
+        return PartialView(vm);
     }
-
+    
+    [HttpGet]
     public IActionResult Privacy()
     {
         return View();
@@ -27,5 +33,12 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> RazorSyntaxAsync([FromServices]ICarDataService dataService)
+    {
+        var car = await dataService.FindAsync(1);
+        return View(car);
     }
 }
